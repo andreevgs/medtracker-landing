@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      const userLanguage = navigator.language || navigator.userLanguage;
+
+      const currentPath = window.location.pathname;
+
+      const pathParts = currentPath.split("/");
+
+      const landingIndex = pathParts.indexOf("meditrack-landing");
+      const newPathParts = [...pathParts];
+      newPathParts.splice(
+        landingIndex + 1,
+        0,
+        userLanguage.startsWith("ru") ? "ru" : "en"
+      );
+
+      const newPath = newPathParts.join("/");
+      window.location.href = newPath;
+    </script>
+  </head>
+  <body></body>
+</html>
