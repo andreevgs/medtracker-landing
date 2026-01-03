@@ -2,19 +2,20 @@
 <html>
   <head>
     <script>
-      const userLanguage = navigator.language || navigator.userLanguage;
-
       const currentPath = window.location.pathname;
 
       const pathParts = currentPath.split("/");
 
+      const getLocale = () => {
+        const lang = navigator.language || navigator.userLanguage;
+        if (lang.startsWith("ru")) return "ru";
+        if (lang.startsWith("zh")) return "zh";
+        return "en";
+      };
+
       const landingIndex = pathParts.indexOf("medtracker-landing");
       const newPathParts = [...pathParts];
-      newPathParts.splice(
-        landingIndex + 1,
-        0,
-        userLanguage.startsWith("ru") ? "ru" : "en"
-      );
+      newPathParts.splice(landingIndex + 1, 0, getLocale());
 
       const newPath = newPathParts.join("/");
       window.location.href = newPath;
