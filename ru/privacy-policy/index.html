@@ -28,6 +28,9 @@
         padding: 3rem 2.5rem;
       }
       footer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         padding: 0 2.5rem;
       }
       h1 {
@@ -184,6 +187,18 @@
     </main>
     <footer class="responsive">
       <p>&copy; 2025. Все права защищены.</p>
+      <div id="locales" class="field suffix round fill">
+        <select name="locales" onchange="location = this.value">
+          <option value="../../ru/privacy-policy/index.html" selected>
+            Русский
+          </option>
+          <option value="../../en/privacy-policy/index.html">English</option>
+          <option value="../../zh/privacy-policy/index.html">
+            中文（简体）
+          </option>
+        </select>
+        <i>arrow_drop_down</i>
+      </div>
     </footer>
   </body>
 </html>
