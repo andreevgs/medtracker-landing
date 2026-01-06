@@ -83,6 +83,10 @@ section {
   );
 }
 
+.note {
+  opacity: 0.6;
+}
+
 #final-CTA p {
   text-align: center;
 }
@@ -101,9 +105,10 @@ section {
   flex-grow: 1;
 }
 
-.footer-links {
+.alert > h5 {
   display: flex;
-  column-gap: 1rem;
+  align-items: center;
+  column-gap: 0.5rem;
 }
 
 #locales {
